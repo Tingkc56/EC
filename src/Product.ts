@@ -12,7 +12,7 @@ export default class Product {
     this.barCode = barCode;
     this.price = price;
     this.description = description;
-    this.image = this.pathImg(image);
+    this.image = this.pathImg(image); // ?? ne comprend pas
   }
 
   shortDescription() {
@@ -24,6 +24,6 @@ export default class Product {
   }
 
   private pathImg(imgName: string) {
-    return `https://www.carrefour.fr/media/540x540/Photosite/PGC/P.L.S./${imgName}`;
+    return `https://www.carrefour.fr/media/540x540/Photosite/PGC/${imgName}`;
   }
 }

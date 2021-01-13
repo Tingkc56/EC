@@ -15,11 +15,11 @@ let cart = new Cart(john);
 
 
 let root = document.getElementById("root");
-let userBar = document.getElementById("user");
+let userBar = document.getElementById("user"); //ces 2 lets sertent a quoi??  ou est le push pour remplir le span
 
-function topUser(user) {
-  if(user.prime) {
-    userBar.innerHTML = `${user.fullName()} <button class="prime">Premium</button>`;
+function topUser(user) {// ce user vient d'ou?
+  if(user.prime) {// if user.prime = true
+    userBar.innerHTML = `${user.fullName()} <button class="prime">Premium</button>`; //在id为user的span中加入内容
   } else {
     userBar.innerHTML = `${user.fullName()} <button id="primify">Devenir premium</button>`;
   }
@@ -27,7 +27,7 @@ function topUser(user) {
 
 topUser(john);
 
-function displayCart(nb, val) {
+function displayCart(nb, val) { // les donnees de nb et val viennent d'ou??
   let cart = document.getElementById("cart");
   cart.innerText = `${nb} article${nb > 1 ? 's' : ''} d'une valeur de ${val} €`;
 }
@@ -38,6 +38,18 @@ document.getElementById('primify').addEventListener('click', () => {
   displayCart(cart.count(), cart.total())
 });
 
+//Affichage dans la premier ligne de root
+let type = document.createElement('div');
+type.innerHTML = '<button class="tout">Tout</button> <button class="fromage">Fromage</button> <button class="pate">Pate</button>';
+
+console.log(type);
+document.getElementsByTagName('div')[1].appendChild(type);
+//faire fonctionner le click type
+// document.getElementById('fromage').addEventListener('click', () => {
+  
+//   //style.display=block;
+//   //style.display=none;
+})
 
 // Affichage dans le root
 apiProducts.forEach(apiP => {
@@ -65,6 +77,7 @@ apiProducts.forEach(apiP => {
     cart.add(product);
     displayCart(cart.count(), cart.total())
   }
+
 
   card.appendChild(title);
   card.appendChild(img);
