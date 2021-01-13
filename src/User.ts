@@ -6,7 +6,7 @@ export default class User {
   constructor(firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
-    this.prime = false;
+    this.prime = false; //默认不是prime
   }
 
   subscribe() { this.prime = true }
